@@ -5,11 +5,7 @@ locals {
     has_issues         = true
     allow_merge_commit = true
 
-    topics = [
-      "iac",
-      "terraform",
-      "terraform-modules",
-    ]
+    topics = var.topics
   }
 
   # default settings for public repositories ( merge with private default settings )
@@ -61,9 +57,9 @@ module "private_repository" {
   source  = "mineiros-io/repository/github"
   version = "0.1.0"
 
-  name               = "terraform-aws-cloudfront"
+  name               = "self-service-repo"
   homepage_url       = "https://medium.com/mineiros"
-  description        = "A test repository create for demonstration purpose for the How to manage your GitHub Organization with Terraform article."
+  description        = "manage self-service onboarding for new employees"
   defaults           = local.private_defaults
   branch_protections = local.default_branch_protections
   license_template   = "apache-2.0"

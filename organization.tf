@@ -6,20 +6,20 @@ locals {
 
   # A map of GitHub users that should have admin permissions
   admin_users = {
-    "alice@acme.com" = "alice"
-    "bob@acme.com"   = "bob"
+    "alice@kevala.com" = "alice"
+    "bob@kevala.com"   = "bob"
   }
 
   # A map of member machine users. These users are used by automation processes such as cloning repositories
   member_machine_users = {
-    "ciuser@acme.com" = "acme-ci"
+    "ciuser@kevala.com" = "kevala-ci"
   }
 
   # A map of GitHub users that should have member permissions
   member_users = {
-    "stephe@acme.com" = "cOdewars1337",
-    "angela@acme.com" = "profundidaddeplagas",
-    "jenz@acme.com"   = "jenzcancode",
+    "stephe@kevala.com" = "cOdewars1337",
+    "angela@kevala.com" = "profundidaddeplagas",
+    "jenz@kevala.com"   = "jenzcancode",
   }
 
   # We merge the maps of members and admins and pass them as arguments to the module

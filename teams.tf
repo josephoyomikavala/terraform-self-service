@@ -7,9 +7,8 @@ module "team_reviewers" {
   privacy     = "secret"
 
   members = [
-    local.member_users["stephe@acme.com"],
-    local.member_users["angela@acme.com"]
-
+    local.member_users["stephe@kevala.com"],
+    local.member_users["angela@kevala.com"]
   ]
 
   maintainers = values(local.admin_users)
@@ -24,9 +23,9 @@ module "team_contributors" {
   privacy     = "secret"
 
   members = [
-    local.member_users["stephe@acme.com"],
-    local.member_users["angela@acme.com"],
-    local.member_users["jenz@acme.com"]
+    local.member_users["stephe@kevala.com"],
+    local.member_users["angela@kevala.com"],
+    local.member_users["jenz@kevala.com"]
   ]
 
   maintainers = values(local.admin_users)
