@@ -6,3 +6,4 @@ terraform-local.tfvars
 
 terraform.tfvars.test
 teams.tf.test
+.idea/
