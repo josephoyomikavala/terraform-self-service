@@ -22,7 +22,7 @@ teams = {
   },
   "data" : {
     name        = "Data Team"
-    members     = [""]
+    members     = ["josephoyomikavala"]
     privacy     = "closed"
     description = "data analytics"
   }
