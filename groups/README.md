@@ -4,7 +4,7 @@ As a member of the engineering team, you've been directed towards this repo to s
 
 To get started, go ahead and clone this repository and checkout a new branch
 
-Open [terraform.auto.tfvars](terraform.auto.tfvars) and look for your group's list of users. Don't know what group to look for? Talk to your manager, or ping the Infra team!
+Open [terraform.auto.tfvars](terraform.auto.tfvars) and look for your group's list of members and add your kevala iam user, typically in the format `firstName.lastName`. Don't know what group to look for? Talk to your manager, or ping the Infra team!
 
 
 Add yourself to multiple lists if you need access to multiple groups!
