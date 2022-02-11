@@ -10,7 +10,7 @@ projects = [
 
 admins = ["josephoyomikavala"]
 
-members = [ "katschlorff"]
+members = ["katschlorff"]
 
 
 teams = {
