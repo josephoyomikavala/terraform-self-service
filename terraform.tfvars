@@ -15,4 +15,4 @@ members = ["katschlorff"]
 infrastructure_team_members = [{name = "katschlorff", role = "member"}]
 data_team_members = [{name = "josephoyomikavala", role = "maintainer"}]
 
-organization_name = "Honrado-the-bugfixer"
+organization_name = "KevalaAnalytics"
