@@ -1,4 +1,4 @@
-data google_organization "org" {
+data "google_organization" "org" {
   domain = "kevala.com"
 }
 
