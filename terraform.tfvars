@@ -5,25 +5,14 @@ projects = [
   },
   {
     name = "Project 2"
+    body = ""
   }
 ]
 
 admins = ["josephoyomikavala"]
-
 members = ["katschlorff"]
 
+infrastructure_team_members = [{name = "katschlorff", role = "member"}]
+data_team_members = [{name = "josephoyomikavala", role = "maintainer"}]
 
-teams = {
-  "infra" : {
-    name        = "Infrastructure Team"
-    description = "skunk works"
-    privacy     = ""
-    members     = ["katschlorff"]
-  },
-  "data" : {
-    name        = "Data Team"
-    members     = ["josephoyomikavala"]
-    privacy     = "closed"
-    description = "data analytics"
-  }
-}
+organization_name = "Honrado-the-bugfixer"

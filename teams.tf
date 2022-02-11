@@ -1,21 +1,44 @@
-resource "github_team" "kevala-teams" {
-  for_each    = var.teams
-  name        = each.value.name
-  description = each.value.description
+
+
+resource "github_team" "infrastructure-team" {
+  name        = "Infrastructure Team"
+  description = "skunk works"
+}
+
+resource "github_team" "data-team" {
+  name        = "Data Team"
+  description = "team responsible for data analytics"
 }
 
 
-locals {
-  team_and_members = { for item in flatten([for team in github_team.kevala-teams : [for member in [for x in var.teams : x.members if x.name == team.name][0] : { username = member, role = "member", team_id = team.id }]]) : (format("%s-%s", item.team_id, item.username)) => item }
+resource "github_team_membership" "infrastructure_team_memberships" {
+  for_each = {for team_member in var.infrastructure_team_members : lower(team_member.name) => lower(team_member.role)}
+
+  team_id  = github_team.infrastructure-team.id
+  username = each.key
+  role     = each.value
 }
 
-resource "github_team_membership" "members-of-team" {
+resource "github_team_membership" "data_team_memberships" {
+  for_each = {for team_member in var.data_team_members : lower(team_member.name) => lower(team_member.role)}
 
-  for_each = local.team_and_members
-  team_id  = each.value.team_id
-  username = each.value.username
-  role     = each.value.role
-
-  depends_on = [github_team.kevala-teams, local.team_and_members]
-
+  team_id  = github_team.data-team.id
+  username = each.key
+  role     = each.value
 }
+
+# locals {
+#   repo_admin = { for i in var.admin_repositories : lower(i) => "admin" }
+#   repo_push  = { for i in var.push_repositories : lower(i) => "push" }
+#   repo_pull  = { for i in var.pull_repositories : lower(i) => "pull" }
+
+#   repositories = merge(local.repo_admin, local.repo_push, local.repo_pull)
+# }
+
+# resource "github_team_repository" "team_repository" {
+#   for_each = local.repositories
+
+#   repository = each.key
+#   team_id    = github_team.team.id
+#   permission = each.value
+# }

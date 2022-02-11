@@ -8,23 +8,59 @@ variable "projects" {
 variable "members" {
   description = "A list of members to add to the organization."
   type        = set(string)
-  # default = [
-  #   "terraform-test-user-1",
-  #   "terraform-test-user-2",
-  # ]
 }
 
 variable "admins" {
   description = "A list of admins to add to the organization."
   type        = set(string)
-  # default = [
-  #   "terraform-test-admin",
-  # ]
+
 }
 
-# teams addition
-variable "teams" {
-  type        = map(any)
-  description = "list of teams"
+# teams addition 
+# optional ----------------
+variable "description" {
+  description = "A description of the team."
+  type        = string
+  default     = ""
+}
+
+variable "privacy" {
+  description = "The level of privacy for the team. Must be one of secret or closed."
+  type        = string
+  default     = "secret"
+}
+
+variable "admin_repositories" {
+  description = "A list of repository names the current team should get admin (full) permission to."
+  type        = set(string)
+  default = []
+}
+
+variable "push_repositories" {
+  description = "A list of repository names the current team should get push (read-write) permission to."
+  type        = set(string)
+  default     = []
+}
+
+variable "pull_repositories" {
+  description = "A list of repository names the current team should get pull (read-only) permission to."
+  type        = set(string)
+  default     = []
+}
+
+variable infrastructure_team_members {
+  type        = set(any)
+  description = "description"
+}
+
+variable data_team_members {
+  type        = set(any)
+  description = "description"
+}
+
+variable organization_name {
+  type        = string
+  default     = ""
+  description = "description"
 }
 

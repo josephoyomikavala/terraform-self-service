@@ -2,3 +2,7 @@
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
+terraform-local.tfvars
+
+terraform.tfvars.test
+teams.tf.test
