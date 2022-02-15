@@ -16,6 +16,14 @@ variable "admins" {
 
 }
 
+variable "organization_name" {
+  type        = string
+  default     = ""
+  description = "description"
+}
+
+
+# teams 
 # teams addition 
 # optional ----------------
 variable "description" {
@@ -33,7 +41,7 @@ variable "privacy" {
 variable "admin_repositories" {
   description = "A list of repository names the current team should get admin (full) permission to."
   type        = set(string)
-  default = []
+  default     = []
 }
 
 variable "push_repositories" {
@@ -48,19 +56,14 @@ variable "pull_repositories" {
   default     = []
 }
 
-variable infrastructure_team_members {
+variable "infrastructure_team_members" {
   type        = set(any)
   description = "description"
 }
 
-variable data_team_members {
+variable "data_team_members" {
   type        = set(any)
   description = "description"
 }
 
-variable organization_name {
-  type        = string
-  default     = ""
-  description = "description"
-}
 
