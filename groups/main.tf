@@ -3,14 +3,12 @@ resource "google_project" "project_x" {
   project_id = "kv-test-self-service-groups"
 }
 
-resource "google_project_iam_binding" "project_x_iam_policy" {
-  project = google_project.project_x.id
-  role    = "roles/bigquery.admin"
-
-  members = [
-    "group:${google_cloud_identity_group.team_x_dba_group.group_key.id}"
-  ]
+module "kats_cool_group" {
+  source = "./modules/kevala_gcp_groups"
+  group_email = "infra-team-testing@kevala.com"
+  group_members = ["kat.schlorff", "eric.arellano", "hannah", "james.ethridge", "joseph.oyomi"]
+  group_name = "kats-cool-group"
+  project_id = google_project.project_x.project_id
+  role_to_grant = "roles/gkehub.admin"
 }
-
-
 
