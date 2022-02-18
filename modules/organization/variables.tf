@@ -16,3 +16,9 @@ variable "admins" {
 
 }
 
+variable organization_name {
+  type        = string
+  default     = ""
+  description = "description"
+}
+

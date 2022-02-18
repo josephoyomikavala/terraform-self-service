@@ -67,3 +67,26 @@ variable "data_team_members" {
 }
 
 
+variable "infrastructure_repos" {
+  type = set(any)
+  # default     = [
+  # { name = "passport", description = "Authentication repo", visibility = "private"}
+  # { name: "conductor", description: "grid-assessor tool",visibility = "public"}
+  #]
+  description = "description"
+}
+
+variable "data_repos" {
+  type = set(any)
+  # default     = [
+  # { name = "passport", description = "Authentication repo", visibility = "private"}
+  # { name: "conductor", description: "grid-assessor tool",visibility = "public"}
+  #]
+  description = "description"
+}
+
+variable project_id {
+  type        = string
+  default     = ""
+  description = "description"
+}

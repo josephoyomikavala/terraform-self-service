@@ -15,3 +15,19 @@ variable team_description {
   default     = ""
   description = "further description of what the team is about"
 }
+
+variable repositories {
+  type        = set(any)
+  # default     = [
+    # { name = "passport", description = "Authentication repo", visibility = "private"}
+    # { name: "conductor", description: "grid-assessor tool",visibility = "public"}
+  #]
+  description = "description"
+}
+
+variable organization_name {
+  type        = string
+  default     = ""
+  description = "description"
+}
+
