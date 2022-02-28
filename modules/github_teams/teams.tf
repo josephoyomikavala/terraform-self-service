@@ -22,12 +22,20 @@ resource "github_repository" "repositories" {
   visibility = each.value.visibility
 }
 
-resource "github_repository_collaborator" "a_repo_collaborator" {
+# resource "github_repository_collaborator" "a_repo_collaborator" {
 
-  for_each = { for repo in var.repositories : lower(repo.name) => repo } 
-  repository = repo.name
-  username   = "SomeUser"
-  permission = "admin"
+#   for_each = { for repo in var.repositories : lower(repo.name) => repo } 
+#   repository = repo.name
+#   username   = "SomeUser"
+#   permission = "admin"
 
-  depends_on = [github_repository.repositories]
+#   depends_on = [github_repository.repositories]
+# }
+
+resource "github_team_repository" "some_team_repo" {
+  for_each = { for repo in github_repository.repositories: lower(repo.name) => repo}
+
+  team_id    = github_team.team_created.id
+  repository = each.key
+  permission = "pull"
 }

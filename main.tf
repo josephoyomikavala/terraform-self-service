@@ -13,7 +13,6 @@ module "infrastructure-team" {
   team_description  = "Skunk Works"
   repositories      = var.infrastructure_repos
   organization_name = var.organization_name
-
 }
 
 module "data-team" {
@@ -27,7 +26,7 @@ module "data-team" {
 
 module "service_accounts" {
   source        = "terraform-google-modules/service-accounts/google"
-  version       = "~> 3.0"
+  version       = "~> 4.0"
   project_id    = var.project_id
   prefix        = "sa"
   names         = ["provisioner"]
