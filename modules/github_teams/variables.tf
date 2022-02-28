@@ -31,3 +31,8 @@ variable organization_name {
   description = "description"
 }
 
+variable team_permission {
+  type        = string
+  default     = "pull"
+  description = "team permission to repositories"
+}
